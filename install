@@ -1,13 +1,34 @@
 #!/bin/bash
+echo DEFINA UMA SENHA PARA O USUÁRIO ROOT
 passwd root
-echo WESLEY-PC > /etc/hostname
+sleep 2
+echo DEFINA O HOSTNAME DA MÁQUINA...
+read hostname
+echo $hostname > /etc/hostname
+sleep 2
+echo CONFIGURAR LOCAL
+sleep 2
 nano /etc/locale.gen
 locale-gen && export LANG=pt_BR.UTF-8
 locale > /etc/locale.conf
+sleep 2
+echo CONFIGURAR PACMAN.CONF
+sleep 2
 nano /etc/pacman.conf
 pacman -Syu
+sleep 2
+echo CRIANDO IMAGEM INITRAM
+sleep 2
 mkinitcpio -p linux
-pacman -S grub efibootmgr --noconfirm
+sleep 2
+echo INSTALANDO GRUB
+sleep 2
+pacman -Sy grub efibootmgr --noconfirm
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch /dev/sda
-systemctl enable dhcpcd.service
+sleep 2
+echo CONFIGURANDO GRUB
+sleep 2
 grub-mkconfig -o /boot/grub/grub.cfg
+sleep 2
+echo HABILITANDO SERVIÇO DHCP
+systemctl enable dhcpcd.service
