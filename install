@@ -7,7 +7,7 @@ locale > /etc/locale.conf
 nano /etc/pacman.conf
 pacman -Syu
 mkinitcpio -p linux
-pacman -S grub efibootmgr
+pacman -S grub efibootmgr --noconfirm
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch /dev/sda
 systemctl enable dhcpcd.service
 grub-mkconfig -o /boot/grub/grub.cfg
