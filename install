@@ -25,7 +25,7 @@ sleep 1
 echo INSTALANDO GRUB
 sleep 1
 pacman -Sy grub efibootmgr --noconfirm
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch /dev/sda
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch /dev/sda
 sleep 1
 echo CONFIGURANDO GRUB
 sleep 1
