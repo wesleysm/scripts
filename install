@@ -8,7 +8,7 @@ echo $hostname > /etc/hostname
 sleep 1
 echo CONFIGURANDO LOCAL
 sleep 1
-echo -e "pt_BR.UTF-8 UTF-8\npt_BR ISO-8859-1"
+echo -e "pt_BR.UTF-8 UTF-8\npt_BR ISO-8859-1" > etc/locale.gen 
 locale-gen && export LANG=pt_BR.UTF-8
 locale > /etc/locale.conf
 echo LOCAL CONFIGURADO COM SUSESSO!
