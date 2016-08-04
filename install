@@ -16,7 +16,7 @@ sleep 1
 echo CONFIGURAR PACMAN.CONF
 sleep 1
 nano /etc/pacman.conf
-pacman -Syu
+pacman -Sy
 sleep 1
 echo CRIANDO IMAGEM INITRAM
 sleep 1
