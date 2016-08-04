@@ -1,34 +1,36 @@
 #!/bin/bash
-echo DEFINA UMA SENHA PARA O USUÁRIO ROOT
+echo DIGITE A SENHA DO USUÁRIO ROOT:
 passwd root
-sleep 2
-echo DEFINA O HOSTNAME DA MÁQUINA...
+sleep 1
+echo Digite o hostname para a máquina:
 read hostname
-echo $hostname > /etc/hostname
-sleep 2
-echo CONFIGURAR LOCAL
-sleep 2
-nano /etc/locale.gen
+echo $hostname > TESTE
+sleep 1
+echo CONFIGURANDO LOCAL
+sleep 1
+echo -e "pt_BR.UTF-8 UTF-8\npt_BR ISO-8859-1"
 locale-gen && export LANG=pt_BR.UTF-8
 locale > /etc/locale.conf
-sleep 2
+echo LOCAL CONFIGURADO COM SUSESSO!
+sleep 1
 echo CONFIGURAR PACMAN.CONF
-sleep 2
+sleep 1
 nano /etc/pacman.conf
 pacman -Syu
-sleep 2
+sleep 1
 echo CRIANDO IMAGEM INITRAM
-sleep 2
+sleep 1
 mkinitcpio -p linux
-sleep 2
+sleep 1
 echo INSTALANDO GRUB
-sleep 2
+sleep 1
 pacman -Sy grub efibootmgr --noconfirm
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch /dev/sda
-sleep 2
+sleep 1
 echo CONFIGURANDO GRUB
-sleep 2
+sleep 1
 grub-mkconfig -o /boot/grub/grub.cfg
-sleep 2
+sleep 1
 echo HABILITANDO SERVIÇO DHCP
+sleep 1
 systemctl enable dhcpcd.service
