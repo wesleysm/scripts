@@ -1,3 +1,4 @@
 #!/bin/bash
 pacman -S xorg-server xorg-server-utils xorg-utils xorg-apps xorg-twn xorg-xinit xorg-xterm xclock xf86-input-vmmouse xf86-input-mouse xf86-input-keyboard mesa xf86-video-vesa ttf-dejavu ttf-liberation
+useradd -m -s /bin/bash -g users -G audio,video,network,power,storage,wheel
 startx
