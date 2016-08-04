@@ -2,4 +2,6 @@ pacman -S xfce4 alsa-utils gnome-system-monitor leafpad gnome-calculator network
 systemctl disable dhcpcd.service
 systemctl enable NetworkManager.service
 systemctl enable lightdm.service
+useradd -m -s /bin/bash -g users -G audio,video,network,power,storage,wheel wesley
+passwd wesley
 reboot
