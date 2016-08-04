@@ -4,7 +4,7 @@ passwd root
 sleep 1
 echo Digite o hostname para a máquina:
 read hostname
-echo $hostname > TESTE
+echo $hostname > /etc/hostname
 sleep 1
 echo CONFIGURANDO LOCAL
 sleep 1
