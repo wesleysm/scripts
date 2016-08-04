@@ -1,4 +1,4 @@
-pacman -S open-vm-tools xf86-video-vmware
+pacman -S open-vm-tools xf86-video-vmware --noconfirm
 cat /proc/version > /etc/arch-release
 echo needs_root_rights=yes > /etc/X11/Xwrapper.config
 systemctl start vmtoolsd.service
