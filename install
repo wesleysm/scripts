@@ -1,36 +1,51 @@
 #!/bin/bash
-echo DIGITE A SENHA DO USUÁRIO ROOT:
+echo DIGITE A SENHA PARA O USUÁRIO ROOT
 passwd root
 sleep 1
-echo Digite o hostname para a máquina:
+echo
+echo DEFINA O HOSTNAME DA MÁQUINA:
 read hostname
 echo $hostname > /etc/hostname
 sleep 1
+echo
+echo
 echo CONFIGURANDO LOCAL
 sleep 1
-echo -e "pt_BR.UTF-8 UTF-8\npt_BR ISO-8859-1" > etc/locale.gen 
+echo -e "pt_BR.UTF-8 UTF-8\npt_BR ISO-8859-1" > /etc/locale.gen 
 locale-gen && export LANG=pt_BR.UTF-8
 locale > /etc/locale.conf
+sleep 1
 echo LOCAL CONFIGURADO COM SUSESSO!
 sleep 1
+echo
+echo
 echo CONFIGURAR PACMAN.CONF
 sleep 1
 nano /etc/pacman.conf
 pacman -Sy
 sleep 1
-echo CRIANDO IMAGEM INITRAM
+echo
+echo
+echo GERANDO IMAGEM INITRAMFS
 sleep 1
 mkinitcpio -p linux
 sleep 1
+echo
+echo
 echo INSTALANDO GRUB
 sleep 1
 pacman -Sy grub efibootmgr --noconfirm
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch /dev/sda
 sleep 1
+echo
+echo
 echo CONFIGURANDO GRUB
 sleep 1
 grub-mkconfig -o /boot/grub/grub.cfg
 sleep 1
+echo
 echo HABILITANDO SERVIÇO DHCP
+echo
 sleep 1
 systemctl enable dhcpcd.service
+echo -e "A INSTALAÇÃO FOI CONCLUÍDA COM SUSESSO!\nPRESSIONE 'CTRL + D' OU DIGITE EXIT PARA SAIR."
