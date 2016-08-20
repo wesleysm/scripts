@@ -1,4 +1,4 @@
 #!/bin/bash
-pacman -Sy firefox firefox-i18n-pt-br gparted mplayer smplayer clementine gstreamer gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good gst-plugins-ugly &&
+pacman -Sy firefox firefox-i18n-pt-br gparted mplayer smplayer clementine gstreamer gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good gst-plugins-ugly vim samba gvfs-smb gvfs-afc alsa-utils gnome-system-monitor leafpad gnome-calculator networkmanager network-manager-applet numix-themes xdg-user-dirs unrar zip p7zip file-roller gvfs thunar-archive-plugin ntfs-3g gvfs-gphoto2 gvfs-mtp gvfs-nfs &&
 sleep 1
 echo "COMANDO CONCLUÍDO COM SUCESSO!"
