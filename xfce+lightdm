@@ -1,0 +1,7 @@
+#!/bin/bash
+pacman -Sy xfce4 alsa-utils gnome-system-monitor leafpad gnome-calculator networkmanager network-manager-applet numix-themes xdg-user-dirs unrar zip p7zip file-roller gvfs thunar-archive-plugin ntfs-3g xfce4-whiskermenu-plugin xfce4-notifyd lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings &&
+systemctl disable dhcpcd.service
+systemctl enable NetworkManager.service &&
+systemctl enable lightdm.service &&
+sleep 1
+echo COMANDO CONCLUÍDO COM SUCESSO!
