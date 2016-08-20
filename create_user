@@ -1,0 +1,11 @@
+#!/bin/bash
+echo DIGITE UM NOME DE LOGIN PARA O USUÁRIO:
+read usuario
+useradd -m -s /bin/bash -g users -G audio,video,network,power,storage,wheel $usuario &&
+echo DEFINA UMA SENHA PARA O USUÁRIO:
+passwd $usuario &&
+echo USUÁRIO $usuario CRIADO COM SUCESSO!!
+sleep 2
+echo CONFIGURE O ARQUIVO SUDOERS
+sleep 2
+EDITOR=nano visudo
