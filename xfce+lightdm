@@ -4,4 +4,13 @@ systemctl disable dhcpcd.service
 systemctl enable NetworkManager.service &&
 systemctl enable lightdm.service &&
 sleep 1
-echo COMANDO CONCLUÍDO COM SUCESSO!
+echo "COMANDO CONCLUÍDO COM SUCESSO!"
+sleep 1
+echo "CRIANDO USUÁRIO..."
+sleep 1
+echo "DIGITE O NOME DE LOGIN DO USUÁRIO:"
+read usuario
+useradd -m -s /bin/bash -g users -G audio,video,network,storage,power,wheel $usuario
+echo "DIGITE UMA SENHA PARA $usuario"
+passwd $usuario
+echo "USUÁRIO $usuario CRIADO COM SUCESSO!"
