@@ -14,3 +14,9 @@ useradd -m -s /bin/bash -g users -G audio,video,network,storage,power,wheel $usu
 echo "DIGITE UMA SENHA PARA $usuario"
 passwd $usuario
 echo "USUÁRIO $usuario CRIADO COM SUCESSO!"
+sleep 1
+echo "CONFIGURE O ARQUIVO SUDOERS"
+sleep 1
+echo "ABRINDO ARQUIVO SUDOERS"
+sleep 1
+EDITOR=nano sudoers
