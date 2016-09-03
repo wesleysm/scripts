@@ -1,0 +1,16 @@
+#!/bin/bash
+mkdir -p /var/lib/samba/usershare
+groupadd -r sambashare
+gpasswd sambashare -a $USER
+chown root:sambashare /var/lib/samba/usershare
+chmod 1770 /var/lib/samba/usershare
+sleep 1
+echo "ADICIONE O SEGUINTE CONTEÚDO AO SMB.CONF:"
+echo ""
+echo "[global]"
+echo "usershare path = /var/lib/samba/usershare"
+echo "usershare max shares = 100"
+echo "usershare allow guests = yes"
+echo "usershare owner only = yes"
+echo ""
+echo "Em seguinda, reinicie os serviços do samba smbd e nmbd e faça logoff para que as modificações entrem em vigor"
