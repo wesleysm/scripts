@@ -15,7 +15,7 @@ echo $hostname > /etc/hostname
 sleep 1
 echo""
 echo""
-echo "CONFIGURANDO LOCAL"
+echo "CONFIGURANDO LOCAL PARA IDIOMA PORTUGUES DO BRASIL"
 sleep 1
 echo -e "pt_BR.UTF-8 UTF-8\npt_BR ISO-8859-1" > /etc/locale.gen 
 locale-gen && export LANG=pt_BR.UTF-8
