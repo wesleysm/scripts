@@ -4,7 +4,7 @@ groupadd -r sambashare
 gpasswd sambashare -a $USER
 chown root:sambashare /var/lib/samba/usershare
 chmod 1770 /var/lib/samba/usershare
-sleep 1
+clear
 echo "ADICIONE O SEGUINTE CONTEÚDO AO SMB.CONF:"
 echo ""
 echo "[global]"
@@ -13,4 +13,10 @@ echo "usershare max shares = 100"
 echo "usershare allow guests = yes"
 echo "usershare owner only = yes"
 echo ""
-echo "Em seguinda, reinicie os serviços do samba smbd e nmbd e faça logoff para que as modificações entrem em vigor"
+echo""
+echo "REINICIANDO SERVICOS SAMBA"
+systemctl restart smbd.service
+systemctl restart nmbd.service
+sleep 2
+clear
+echo "Voce deve fazer logoff para que as alteracoes entrem em vigor"
