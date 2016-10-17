@@ -1,7 +1,9 @@
 #!/bin/bash
 clear
 echo "INSTALANDO UTILITARIOS..."
-pacman -Sy --noconfirm firefox mplayer smplayer numix-themes faenza-icons clementine samba alsa-utils yaourt youtube-dl unrar p7zip zip
+pacman -Sy --noconfirm firefox mplayer smplayer numix-themes faenza-icons clementine samba alsa-utils yaourt vim youtube-dl unrar p7zip zip networkmanager network-manager-applet
+systemctl disable dhcpcd.service
+systemctl enable NetworkManager.service
 yaourt pamac
 yaourt numix-circle
 sleep 2
