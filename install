@@ -19,7 +19,6 @@ locale > /etc/locale.conf
 clear
 echo"CONFIGURANDO HORARIO PARA AMERICA/SAO PAULO"
 sleep 1
-rm /etc/localtime
 ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 sleep 1
 clear
