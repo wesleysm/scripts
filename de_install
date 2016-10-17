@@ -1,16 +1,16 @@
 #!/bin/bash
 
 function install_xfce(){
-  pacman -Sy xfce4 xfce4-whiskermenu-plugin thunar-archive-plugin --noconfirm}
+  pacman -Sy xfce4 xfce4-whiskermenu-plugin thunar-archive-plugin gedit gnome-calculator gnome-system-monitor --noconfirm}
   
 function install_cinnamon(){
   pacman -Sy cinnamon --noconfirm}
   
 function install_gnome
-  pacman -Sy gnome-desktop gnome-control-center gnome-shell nautilus gnome-backgrounds gnome-tweak-tool gnome-shell-extensions --noconfirm}
+  pacman -Sy gnome-desktop gnome-control-center gedit gnome-calculator gnome-terminal gnome-system-monitor gnome-shell nautilus nautilus-open-terminal gnome-backgrounds gnome-tweak-tool gnome-shell-extensions --noconfirm}
   
 function install_plasma
-  pacman -Sy plasma-desktop dolphin konsole kde-l10n-pt_br breeze-gtk kde-gtk-config kdenetwork-filesharing kmix --noconfirm}
+  pacman -Sy plasma-desktop dolphin konsole kde-l10n-pt_br breeze-gtk kde-gtk-config kdenetwork-filesharing kmix kwrite --noconfirm}
   
 function install_mate
   pacman -Sy mate --noconfirm}
