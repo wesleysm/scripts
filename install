@@ -28,7 +28,7 @@ nano /etc/pacman.conf
 clear
 echo "GERANDO IMAGEM INITRAMFS KERNEL LTS"
 sleep 2
-pacman -Sy linux-lts
+pacman -Sy linux-lts --noconfirm
 mkinitcpio -p linux-lts
 clear
 echo "INSTALANDO GRUB MODO UEFI EM /DEV/SDA"
