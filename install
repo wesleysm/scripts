@@ -17,7 +17,7 @@ echo -e "pt_BR.UTF-8 UTF-8\npt_BR ISO-8859-1" > /etc/locale.gen
 locale-gen && export LANG=pt_BR.UTF-8
 locale > /etc/locale.conf
 clear
-echo"CONFIGURANDO HORARIO PARA AMERICA/SAO PAULO"
+echo "CONFIGURANDO HORARIO PARA AMERICA/SAO PAULO"
 sleep 1
 ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 sleep 1
