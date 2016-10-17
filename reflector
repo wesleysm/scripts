@@ -1,4 +1,0 @@
-
-#!/bin/bash
-reflector --verbose -l 5 --country 'Brazil' --sort rate --save /etc/pacman.d/mirrorlist
-cat /etc/pacman.d/mirrorlist
