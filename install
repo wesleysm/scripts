@@ -59,4 +59,4 @@ echo "HABILITANDO SERVIÇO DHCP"
 sleep 1
 systemctl enable dhcpcd.service
 echo""
-echo -e "INSTALAÇÃO CONCLUÍDA COM SUSESSO!\nPRESSIONE 'CTRL + D' OU DIGITE EXIT PARA SAIR."
+echo -e "INSTALAÇÃO CONCLUÍDA COM SUSESSO!"
