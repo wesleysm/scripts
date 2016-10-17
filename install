@@ -26,6 +26,12 @@ echo "CONFIGURAR ARQUIVO PACMAN.CONF"
 sleep 2
 nano /etc/pacman.conf
 clear
+echo "CONFIGURANDO MIRRORLIST"
+pacman -S reflector --noconfirm
+reflector --verbose -l 5 --country 'Brazil' --sort rate --save /etc/pacman.d/mirrorlist
+cat /etc/pacman.d/mirrorlist
+sleep 2
+clear
 echo "GERANDO IMAGEM INITRAMFS KERNEL LTS"
 sleep 2
 pacman -Sy linux-lts --noconfirm
