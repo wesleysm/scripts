@@ -4,7 +4,7 @@ passwd root
 sleep 1
 echo""
 echo""
-echo "Configurar arquivo sudoers"
+echo "CONFIGURAR ARQUIVO SUDOERS"
 sleep 2
 EDITOR=nano /etc/sudoers
 echo""
@@ -23,20 +23,20 @@ locale > /etc/locale.conf
 sleep 1
 echo""
 echo""
-echo "CONFIGURAR PACMAN.CONF"
+echo "CONFIGURAR ARQUIVO PACMAN.CONF"
 sleep 2
 nano /etc/pacman.conf
 sleep 1
 echo""
 echo""
-echo "GERANDO IMAGEM INITRAMFS"
+echo "GERANDO IMAGEM INITRAMFS KERNEL LTS"
 sleep 1
-pacman -S linux-lts
+pacman -Sy linux-lts
 mkinitcpio -p linux-lts
 sleep 1
 echo""
 echo""
-echo "INSTALANDO GRUB"
+echo "INSTALANDO GRUB MODO UEFI"
 sleep 1
 pacman -Sy grub efibootmgr --noconfirm
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch /dev/sda
