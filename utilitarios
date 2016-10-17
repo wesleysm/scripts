@@ -1,0 +1,12 @@
+#!/bin/bash
+clear
+echo "INSTALANDO UTILITARIOS..."
+pacman -Sy --noconfirm firefox mplayer smplayer numix-themes faenza-icons clementine samba alsa-utils yaourt youtube-dl unrar p7zip zip
+yaourt pamac
+yaourt numix-circle
+sleep 2
+clear
+echo "INSTALANDO CODECS AUDIO E VIDEO..."
+pacman -Sy --noconfirm gstreamer gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good gst-plugins-ugly ffmpeg
+clear
+echo "INSTALACAO CONCLUIDA COM SUCESSO!"
