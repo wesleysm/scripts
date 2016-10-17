@@ -1,44 +1,28 @@
 #!/bin/bash
+echo ""
+echo ""
 echo "DIGITE A SENHA PARA O USUÁRIO ROOT:"
 passwd root
-echo "CONFIGURE O ARQUIVO SUDOERS"
-sleep 2
-EDITOR=nano visudo
+echo ""
+echo ""
+mv /etc/sudoers /etc/sudoers.original
+cp sudoers /etc/sudoers
 echo "DEFINA O HOSTNAME PARA A MÁQUINA:"
 read hostname
 echo $hostname > /etc/hostname
-echo "CONFIGURANDO LOCAL PARA IDIOMA PORTUGUES DO BRASIL"
-sleep 2
 echo -e "pt_BR.UTF-8 UTF-8\npt_BR ISO-8859-1" > /etc/locale.gen 
 locale-gen && export LANG=pt_BR.UTF-8
 locale > /etc/locale.conf
-echo "CONFIGURANDO HORARIO PARA AMERICA/SAO PAULO"
-sleep 1
 ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
-sleep 1
-clear
-echo "CONFIGURE O ARQUIVO PACMAN.CONF"
-sleep 1
-nano /etc/pacman.conf
-echo "CONFIGURANDO MIRRORLIST"
-pacman -Sy reflector rsync --noconfirm
-reflector --verbose -l 5 --country 'Brazil' --sort rate --save /etc/pacman.d/mirrorlist
-sleep 2
-clear
-echo "GERANDO IMAGEM INITRAMFS KERNEL LTS"
-sleep 2
+mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.original
+cp mirrorlist /etc/pacman.d/mirrorlist
+mv /etc/pacman.conf /etc/pacman.conf.original
+cp pacman.conf /etc/pacman.conf
 pacman -Sy linux-lts --noconfirm
 mkinitcpio -p linux-lts
-clear
-echo "INSTALANDO GRUB MODO UEFI EM /DEV/SDA"
-sleep 2
 pacman -Sy grub efibootmgr --noconfirm
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch /dev/sda
-echo "CONFIGURANDO ARQUIVO GRUB.CFG"
-sleep 2
 grub-mkconfig -o /boot/grub/grub.cfg
-echo "HABILITANDO SERVIÇO DHCP"
-sleep 2
 systemctl enable dhcpcd.service
 clear
 echo "INSTALAÇÃO CONCLUÍDA COM SUSESSO!"
