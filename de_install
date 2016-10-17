@@ -1,0 +1,40 @@
+#!/bin/bash
+
+function install_xfce(){
+  pacman -Sy xfce4 xfce4-whiskermenu-plugin thunar-archive-plugin --noconfirm}
+  
+function install_cinnamon(){
+  pacman -Sy cinnamon --noconfirm}
+  
+function install_gnome
+  pacman -Sy gnome-desktop gnome-control-center gnome-shell nautilus gnome-backgrounds gnome-tweak-tool gnome-shell-extensions --noconfirm}
+  
+function install_plasma
+  pacman -Sy plasma-desktop dolphin konsole kde-l10n-pt_br breeze-gtk kde-gtk-config kdenetwork-filesharing kmix --noconfirm}
+  
+function install_mate
+  pacman -Sy mate --noconfirm}
+  
+clear
+echo "Informe qual ambiente de desktop deseja instalar:"
+echo "1 XFCE"
+echo "2 CINNAMON"
+echo "3 GNOME"
+echo "4 KDE PLASMA"
+echo "5 MATE"
+read de
+if $de=1
+  then install_xfce
+done
+if $de=2
+  then install_cinnamon
+done
+if $de=3
+  then install_gnome
+done
+if $de=4
+  then install_plasma
+done
+if $de=5
+  then install_mate
+done
