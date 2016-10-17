@@ -5,7 +5,7 @@ passwd root
 clear
 echo "CONFIGURAR ARQUIVO SUDOERS"
 sleep 2
-EDITOR=nano /etc/sudoers
+EDITOR=nano visudo
 clear
 echo "DEFINA O HOSTNAME PARA A MÁQUINA:"
 read hostname
@@ -18,16 +18,17 @@ locale-gen && export LANG=pt_BR.UTF-8
 locale > /etc/locale.conf
 clear
 echo"CONFIGURANDO HORARIO PARA AMERICA/SAO PAULO"
-sleep 2
+sleep 1
 rm -r /etc/localtime
-ln -s /usr/share/zoneinfo/America/SaoPaulo /etc/localtime
+ln -s /usr/share/zoneinfo/America/Sao_aulo /etc/localtime
+sleep 1
 clear
 echo "CONFIGURAR ARQUIVO PACMAN.CONF"
-sleep 2
+sleep 1
 nano /etc/pacman.conf
 clear
 echo "CONFIGURANDO MIRRORLIST"
-pacman -S reflector --noconfirm
+pacman -Sy reflector rsync --noconfirm
 reflector --verbose -l 5 --country 'Brazil' --sort rate --save /etc/pacman.d/mirrorlist
 cat /etc/pacman.d/mirrorlist
 sleep 2
