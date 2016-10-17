@@ -1,62 +1,47 @@
 #!/bin/bash
+clear
 echo "DIGITE A SENHA PARA O USUÁRIO ROOT:"
 passwd root
-sleep 1
-echo""
-echo""
+clear
 echo "CONFIGURAR ARQUIVO SUDOERS"
 sleep 2
 EDITOR=nano /etc/sudoers
-echo""
-echo""
+clear
 echo "DEFINA O HOSTNAME PARA A MÁQUINA:"
 read hostname
 echo $hostname > /etc/hostname
-sleep 1
-echo""
-echo""
+clear
 echo "CONFIGURANDO LOCAL PARA IDIOMA PORTUGUES DO BRASIL"
-sleep 1
+sleep 2
 echo -e "pt_BR.UTF-8 UTF-8\npt_BR ISO-8859-1" > /etc/locale.gen 
 locale-gen && export LANG=pt_BR.UTF-8
 locale > /etc/locale.conf
-sleep 1
-echo""
-echo""
+clear
 echo"CONFIGURANDO HORARIO PARA AMERICA/SAO PAULO"
-sleep 1
+sleep 2
 rm -r /etc/localtime
 ln -s /usr/share/zoneinfo/America/SaoPaulo /etc/localtime
-sleep 1
-echo""
-echo""
+clear
 echo "CONFIGURAR ARQUIVO PACMAN.CONF"
 sleep 2
 nano /etc/pacman.conf
-sleep 1
-echo""
-echo""
+clear
 echo "GERANDO IMAGEM INITRAMFS KERNEL LTS"
-sleep 1
+sleep 2
 pacman -Sy linux-lts
 mkinitcpio -p linux-lts
-sleep 1
-echo""
-echo""
+clear
 echo "INSTALANDO GRUB MODO UEFI EM /DEV/SDA"
-sleep 1
+sleep 2
 pacman -Sy grub efibootmgr --noconfirm
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch /dev/sda
-sleep 1
-echo""
-echo""
+clear
 echo "CONFIGURANDO ARQUIVO GRUB.CFG"
-sleep 1
+sleep 2
 grub-mkconfig -o /boot/grub/grub.cfg
-sleep 1
-echo""
+clear
 echo "HABILITANDO SERVIÇO DHCP"
-sleep 1
+sleep 2
 systemctl enable dhcpcd.service
-echo""
-echo -e "INSTALAÇÃO CONCLUÍDA COM SUSESSO!"
+clear
+echo "INSTALAÇÃO CONCLUÍDA COM SUSESSO!"
