@@ -26,7 +26,7 @@ sleep 1
 nano /etc/pacman.conf
 clear
 echo "CONFIGURANDO MIRRORLIST"
-pacman -Sy reflector rsync
+pacman -Sy reflector rsync --noconfirm
 reflector --verbose -l 5 --country 'Brazil' --sort rate --save /etc/pacman.d/mirrorlist
 sleep 2
 clear
