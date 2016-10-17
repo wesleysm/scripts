@@ -23,6 +23,13 @@ locale > /etc/locale.conf
 sleep 1
 echo""
 echo""
+echo"CONFIGURANDO HORARIO PARA AMERICA/SAO PAULO"
+sleep 1
+rm -r /etc/localtime
+ln -s /usr/share/zoneinfo/America/SaoPaulo /etc/localtime
+sleep 1
+echo""
+echo""
 echo "CONFIGURAR ARQUIVO PACMAN.CONF"
 sleep 2
 nano /etc/pacman.conf
