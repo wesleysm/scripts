@@ -7,6 +7,9 @@ echo ""
 echo ""
 mv /etc/sudoers /etc/sudoers.original
 cp sudoers /etc/sudoers
+chmod 440 /etc/sudoers
+echo ""
+echo ""
 echo "DEFINA O HOSTNAME PARA A MÁQUINA:"
 read hostname
 echo $hostname > /etc/hostname
@@ -16,8 +19,10 @@ locale > /etc/locale.conf
 ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.original
 cp mirrorlist /etc/pacman.d/mirrorlist
+chmod 644 /etc/pacman.d/
 mv /etc/pacman.conf /etc/pacman.conf.original
-cp pacman.conf /etc/pacman.conf
+cp pacman.conf /etc/
+chmod 644 /etc/pacman.conf
 pacman -Sy linux-lts --noconfirm
 mkinitcpio -p linux-lts
 pacman -Sy grub efibootmgr --noconfirm
@@ -25,4 +30,4 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch /dev
 grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable dhcpcd.service
 clear
-echo "INSTALAÇÃO CONCLUÍDA COM SUSESSO!"
+echo "INSTALAÇÃO CONCLUÍDA COM SUCESSO!"
