@@ -16,9 +16,14 @@ echo -e "pt_BR.UTF-8 UTF-8\npt_BR ISO-8859-1" > /etc/locale.gen
 locale-gen && export LANG=pt_BR.UTF-8
 locale > /etc/locale.conf
 ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+pacman -Sy ntp --noconfirm
+mv /etc/ntp.conf /etc/ntp.conf.original
+cp ntp.conf /etc/
+chmod 644 /etc/ntp.conf
+systemctl enable ntpd.service
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.original
-cp mirrorlist /etc/pacman.d/mirrorlist
-chmod 644 /etc/pacman.d/
+cp mirrorlist /etc/pacman.d/
+chmod 644 /etc/pacman.d/mirrorlist
 mv /etc/pacman.conf /etc/pacman.conf.original
 cp pacman.conf /etc/
 chmod 644 /etc/pacman.conf
