@@ -4,15 +4,14 @@ echo ""
 echo "DIGITE A SENHA PARA O USUÁRIO ROOT:"
 passwd root
 echo ""
-echo ""
 mv /etc/sudoers /etc/sudoers.original
 cp sudoers /etc/sudoers
 chmod 440 /etc/sudoers
 echo ""
-echo ""
 echo "DEFINA O HOSTNAME PARA A MÁQUINA:"
 read hostname
 echo $hostname > /etc/hostname
+echo ""
 echo -e "pt_BR.UTF-8 UTF-8\npt_BR ISO-8859-1" > /etc/locale.gen 
 locale-gen && export LANG=pt_BR.UTF-8
 locale > /etc/locale.conf
