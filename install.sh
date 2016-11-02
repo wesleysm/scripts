@@ -12,7 +12,7 @@ echo "DEFINA O HOSTNAME PARA A MÁQUINA:"
 read hostname
 echo $hostname > /etc/hostname
 echo ""
-echo -e "pt_BR.UTF-8 UTF-8\npt_BR ISO-8859-1" >> /etc/locale.gen 
+echo -e "pt_BR.UTF-8 UTF-8\npt_BR ISO-8859-1" > /etc/locale.gen 
 locale-gen && export LANG=pt_BR.UTF-8
 locale > /etc/locale.conf
 ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
