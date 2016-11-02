@@ -32,5 +32,6 @@ pacman -Sy grub efibootmgr --noconfirm
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable dhcpcd.service
+cp bash_root /root/.bashrc
 echo ""
 echo "INSTALAÇÃO CONCLUÍDA COM SUCESSO!"
