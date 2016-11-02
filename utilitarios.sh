@@ -3,4 +3,4 @@ pacman -Sy --noconfirm firefox firefox-i18n-pt-br mplayer smplayer numix-themes 
 #yaourt pamanc
 #yaourt numix-circle
 #clear
-./usuario
+./usuario.sh
