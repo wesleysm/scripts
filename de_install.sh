@@ -18,4 +18,4 @@ case $opcao in
 5) exit ;;
 *) echo "Opção Inválida" ;;
 esac
-./dm_install
+./dm_install.sh
