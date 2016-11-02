@@ -17,4 +17,4 @@ case $op in
 5) exit ;;
 *) echo "Opção Inválida" ;;
 esac
-./utilitarios
+./utilitarios.sh
