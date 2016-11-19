@@ -7,7 +7,7 @@ echo "[ 2 ] - XFCE4"
 echo "[ 3 ] - CINNAMON"
 echo "[ 4 ] - MATE"
 echo "[ 5 ] - KDE PLASMA"
-Echo "[ 6 ] - SAIR"
+echo "[ 6 ] - SAIR"
 echo ""
 read opcao
 echo ""
