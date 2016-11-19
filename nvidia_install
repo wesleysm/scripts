@@ -1,2 +1,0 @@
-#!/bin/bash
-pacman -Sy --noconfirm nvidia-lts nvidia-libgl lib32-nvidia-libgl nvidia-settings nvidia-utils
